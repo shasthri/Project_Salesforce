@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import base.BrowserFactory;
+import base.BaseClass;
 
-public class LoginPage extends BrowserFactory {
+public class LoginPage extends MenuPage {
 
 	private By userName = By.xpath("//input[@id = 'username']");
 	private By password = By.xpath("//input[@id = 'password']");

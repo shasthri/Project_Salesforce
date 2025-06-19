@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-20T01:18:12 IST" name="Default suite" finished-at="2025-06-20T01:18:33 IST" duration-ms="21752">
+    <groups>
+    </groups>
+    <test started-at="2025-06-20T01:18:12 IST" name="Default test" finished-at="2025-06-20T01:18:33 IST" duration-ms="21752">
+      <class name="testscenarios.TC001_Login">
+        <test-method is-config="true" signature="mLaunchBrowser()[pri:0, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:12 IST" name="mLaunchBrowser" finished-at="2025-06-20T01:18:17 IST" duration-ms="5273" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mLaunchBrowser -->
+        <test-method signature="loginFieldValidation()[pri:1, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:17 IST" name="loginFieldValidation" finished-at="2025-06-20T01:18:17 IST" duration-ms="169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginFieldValidation -->
+        <test-method signature="loginWithValidCredentials()[pri:2, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:17 IST" name="loginWithValidCredentials" finished-at="2025-06-20T01:18:32 IST" duration-ms="15301" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials -->
+        <test-method signature="loginWithInValidCredentials()[pri:3, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:32 IST" name="loginWithInValidCredentials" finished-at="2025-06-20T01:18:33 IST" duration-ms="776" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInValidCredentials -->
+        <test-method is-config="true" signature="mCloseBrowser()[pri:0, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:33 IST" name="mCloseBrowser" finished-at="2025-06-20T01:18:33 IST" duration-ms="201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mCloseBrowser -->
+      </class> <!-- testscenarios.TC001_Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

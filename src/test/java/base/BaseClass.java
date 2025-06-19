@@ -9,10 +9,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-public class BrowserFactory 
+public class BaseClass 
 {
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	public String sURL = "https://login.salesforce.com/";
 	public String sBrowser = "Chrome";
 	
