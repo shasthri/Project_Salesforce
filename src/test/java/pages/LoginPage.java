@@ -14,6 +14,13 @@ public class LoginPage extends MenuPage {
 	private By forgotPassword = By.xpath("//a[@id = 'forgot_password_link']");
 	private By rememberMeCheckBox = By.cssSelector("div.w0.pr.ln3.p16.remember>input");
 	private By loginFailureMsg = By.xpath("//div[@id = 'error']");
+	private WebDriver driver;
+	
+	public LoginPage(WebDriver driver)
+	{
+		super(driver);
+		this.driver = driver;
+	}
 
 	public boolean verifyLoginElements() {
 		if ((driver.findElement(userName).isDisplayed()) && (driver.findElement(password).isDisplayed())
@@ -28,7 +35,7 @@ public class LoginPage extends MenuPage {
 	public LoginPage enterUserName(String sUserName) {
 		WebElement wUserName = driver.findElement(userName);
 		wUserName.sendKeys(sUserName);
-		return new LoginPage();
+		return new LoginPage(driver);
 	}
 
 	public LoginPage enterPassword(String sPassword) {
@@ -40,7 +47,7 @@ public class LoginPage extends MenuPage {
 	public HomePage mClickLoginWithValidCredentials() {
 		WebElement wLoginBtn = driver.findElement(loginBtn);
 		wLoginBtn.click();
-		return new HomePage();
+		return new HomePage(driver);
 	}
 
 	public LoginPage mClickLoginWithInvalidCredentials() {

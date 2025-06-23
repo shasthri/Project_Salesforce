@@ -1,33 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-20T01:18:12 IST" name="Default suite" finished-at="2025-06-20T01:18:33 IST" duration-ms="21752">
+  <suite started-at="2025-06-23T02:49:20 IST" name="Suite" finished-at="2025-06-23T02:49:51 IST" duration-ms="31301">
     <groups>
     </groups>
-    <test started-at="2025-06-20T01:18:12 IST" name="Default test" finished-at="2025-06-20T01:18:33 IST" duration-ms="21752">
-      <class name="testscenarios.TC001_Login">
-        <test-method is-config="true" signature="mLaunchBrowser()[pri:0, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:12 IST" name="mLaunchBrowser" finished-at="2025-06-20T01:18:17 IST" duration-ms="5273" status="PASS">
+    <test started-at="2025-06-23T02:49:20 IST" name="SalesTest" finished-at="2025-06-23T02:49:51 IST" duration-ms="31301">
+      <class name="testscenarios.TC002_CreateLead">
+        <test-method is-config="true" signature="setExcelDataProperties()[pri:0, instance:testscenarios.TC002_CreateLead@1757cd72]" started-at="2025-06-23T02:49:20 IST" name="setExcelDataProperties" finished-at="2025-06-23T02:49:20 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExcelDataProperties -->
+        <test-method is-config="true" signature="mLaunchBrowser()[pri:0, instance:testscenarios.TC002_CreateLead@1757cd72]" started-at="2025-06-23T02:49:20 IST" name="mLaunchBrowser" finished-at="2025-06-23T02:49:22 IST" duration-ms="2084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mLaunchBrowser -->
-        <test-method signature="loginFieldValidation()[pri:1, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:17 IST" name="loginFieldValidation" finished-at="2025-06-20T01:18:17 IST" duration-ms="169" status="PASS">
+        <test-method signature="createSalesLeadWithMandatoryFields(java.lang.String,java.lang.String)[pri:1, instance:testscenarios.TC002_CreateLead@1757cd72]" started-at="2025-06-23T02:49:22 IST" name="createSalesLeadWithMandatoryFields" data-provider="TestCaseData" finished-at="2025-06-23T02:49:51 IST" duration-ms="28437" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ssshasthri991@agentforce.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[RCSeries#01]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createSalesLeadWithMandatoryFields -->
+        <test-method is-config="true" signature="mCloseBrowser()[pri:0, instance:testscenarios.TC002_CreateLead@1757cd72]" started-at="2025-06-23T02:49:51 IST" name="mCloseBrowser" finished-at="2025-06-23T02:49:51 IST" duration-ms="213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mCloseBrowser -->
+      </class> <!-- testscenarios.TC002_CreateLead -->
+      <class name="testscenarios.TC001_Login">
+        <test-method is-config="true" signature="setExcelDataProperties()[pri:0, instance:testscenarios.TC001_Login@22fcf7ab]" started-at="2025-06-23T02:49:20 IST" name="setExcelDataProperties" finished-at="2025-06-23T02:49:20 IST" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExcelDataProperties -->
+        <test-method is-config="true" signature="mLaunchBrowser()[pri:0, instance:testscenarios.TC001_Login@22fcf7ab]" started-at="2025-06-23T02:49:20 IST" name="mLaunchBrowser" finished-at="2025-06-23T02:49:22 IST" duration-ms="2000" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mLaunchBrowser -->
+        <test-method signature="loginFieldValidation()[pri:1, instance:testscenarios.TC001_Login@22fcf7ab]" started-at="2025-06-23T02:49:22 IST" name="loginFieldValidation" finished-at="2025-06-23T02:49:22 IST" duration-ms="133" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginFieldValidation -->
-        <test-method signature="loginWithValidCredentials()[pri:2, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:17 IST" name="loginWithValidCredentials" finished-at="2025-06-20T01:18:32 IST" duration-ms="15301" status="PASS">
+        <test-method signature="loginWithValidCredentials(java.lang.String,java.lang.String)[pri:2, instance:testscenarios.TC001_Login@22fcf7ab]" started-at="2025-06-23T02:49:22 IST" name="loginWithValidCredentials" data-provider="TestCaseData" finished-at="2025-06-23T02:49:37 IST" duration-ms="14636" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ssshasthri991@agentforce.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[RCSeries#01]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCredentials -->
-        <test-method signature="loginWithInValidCredentials()[pri:3, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:32 IST" name="loginWithInValidCredentials" finished-at="2025-06-20T01:18:33 IST" duration-ms="776" status="PASS">
+        <test-method signature="loginWithInValidCredentials()[pri:3, instance:testscenarios.TC001_Login@22fcf7ab]" started-at="2025-06-23T02:49:37 IST" name="loginWithInValidCredentials" finished-at="2025-06-23T02:49:37 IST" duration-ms="613" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInValidCredentials -->
-        <test-method is-config="true" signature="mCloseBrowser()[pri:0, instance:testscenarios.TC001_Login@2925bf5b]" started-at="2025-06-20T01:18:33 IST" name="mCloseBrowser" finished-at="2025-06-20T01:18:33 IST" duration-ms="201" status="PASS">
+        <test-method is-config="true" signature="mCloseBrowser()[pri:0, instance:testscenarios.TC001_Login@22fcf7ab]" started-at="2025-06-23T02:49:37 IST" name="mCloseBrowser" finished-at="2025-06-23T02:49:38 IST" duration-ms="218" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mCloseBrowser -->
       </class> <!-- testscenarios.TC001_Login -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- SalesTest -->
+  </suite> <!-- Suite -->
 </testng-results>

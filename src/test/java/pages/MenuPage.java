@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import base.BaseClass;
 
@@ -11,6 +12,12 @@ public class MenuPage extends BaseClass {
 	protected By salesLink = By.xpath("//p[text() = 'Sales']//ancestor::a");
 	protected By logoutLink = By.xpath("//div[@class = 'profile-card-toplinks']/a[text() = 'Log Out']");
 	protected By userImg = By.xpath("//span[@class = 'uiImage']/ancestor::span/div[@data-aura-class = 'forceEntityIcon']");
+	private WebDriver driver;
+	
+	public MenuPage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
 	
 	public MenuPage clickOnAppLauncher()
 	{
@@ -30,10 +37,10 @@ public class MenuPage extends BaseClass {
 		return this;
 	}
 	
-	public MenuPage clickOnSales()
+	public SalesPage clickOnSales()
 	{
 		driver.findElement(salesLink).click();
-		return this;
+		return new SalesPage(driver);
 	}
 	
 	public MenuPage clickUserImg()
@@ -56,7 +63,7 @@ public class MenuPage extends BaseClass {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return new LoginPage();
+		return new LoginPage(driver);
 	}
 
 }
