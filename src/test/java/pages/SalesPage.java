@@ -10,7 +10,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.ExtentTest;
+
 import libraries.FakerDataFactory;
+import libraries.SeleniumWrapper;
 
 public class SalesPage extends MenuPage {
 
@@ -30,13 +33,15 @@ public class SalesPage extends MenuPage {
 
 	private String sLastName = FakerDataFactory.getLastName();
 	private String sCompanyName = FakerDataFactory.getCompanyName();
-
+	public SeleniumWrapper wrap;
 
 	
-	public SalesPage(WebDriver driver)
+	public SalesPage(WebDriver driver, ExtentTest node)
 	{
-		super(driver);
+		super(driver, node);
 		this.driver = driver;
+		this.node = node;
+		wrap = new SeleniumWrapper(driver, node);
 	}
 	
 	public SalesPage mClickOnLeads() {
@@ -62,28 +67,34 @@ public class SalesPage extends MenuPage {
 	}
 
 	public SalesPage mClickOnNewLeadButton() {
-		driver.findElement(newBtn).click();
+		wrap.click(driver.findElement(newBtn));
+//		driver.findElement(newBtn).click();
 		return this;
 	}
 
 	public SalesPage mEnterlastName() {
 		WebElement wLastName = driver.findElement(lastName);
-		wLastName.sendKeys(sLastName);
+		wrap.type(wLastName, sLastName);
+//		wLastName.sendKeys(sLastName);
 		return this;
 	}
 
 	public SalesPage mEnterCompanyName() {
 		WebElement wCompany = driver.findElement(companyName);
-		wCompany.sendKeys(sCompanyName);
+		wrap.type(wCompany, sCompanyName);
+//		wCompany.sendKeys(sCompanyName);
 		return this;
 	}
 
 	public SalesPage selectLeadStatus(String sLeadStatus) {
-		Actions oAction = new Actions(driver);
-		oAction.moveToElement(driver.findElement(noOfEmployees)).perform();
-
+//		Actions oAction = new Actions(driver);
+//		oAction.moveToElement(driver.findElement(noOfEmployees)).perform();
+		
+		wrap.moveToElement(driver.findElement(noOfEmployees), "Number of Employees");
+		
 		WebElement wLeadStatusDropDown = driver.findElement(leadStatusField);
-		wLeadStatusDropDown.click();
+		wrap.click(wLeadStatusDropDown, "Lead status");
+//		wLeadStatusDropDown.click();
 
 		List<WebElement> lLeadStatus = driver.findElements(leadStatusDropDown);
 		for (WebElement wLeadStatus : lLeadStatus) {
@@ -95,8 +106,9 @@ public class SalesPage extends MenuPage {
 	}
 
 	public SalesPage mClickOnSaveButton() {
-		driver.findElement(saveButton).click();
 
+		wrap.click(driver.findElement(saveButton));
+//		driver.findElement(saveButton).click();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {

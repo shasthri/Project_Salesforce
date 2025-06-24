@@ -4,7 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.aventstack.extentreports.ExtentTest;
+
 import base.BaseClass;
+import libraries.SeleniumWrapper;
 
 public class LoginPage extends MenuPage {
 
@@ -15,50 +18,70 @@ public class LoginPage extends MenuPage {
 	private By rememberMeCheckBox = By.cssSelector("div.w0.pr.ln3.p16.remember>input");
 	private By loginFailureMsg = By.xpath("//div[@id = 'error']");
 	private WebDriver driver;
+	public SeleniumWrapper wrap;
 	
-	public LoginPage(WebDriver driver)
+	public LoginPage(WebDriver driver, ExtentTest node)
 	{
-		super(driver);
+		super(driver, node);
 		this.driver = driver;
+		this.node = node;
+		wrap = new SeleniumWrapper(driver, node);
 	}
 
 	public boolean verifyLoginElements() {
-		if ((driver.findElement(userName).isDisplayed()) && (driver.findElement(password).isDisplayed())
-				&& (driver.findElement(loginBtn).isDisplayed()) && (driver.findElement(forgotPassword).isDisplayed())
-				&& (driver.findElement(rememberMeCheckBox).isDisplayed())) {
+		if(wrap.verifyDisplayedwithReturn(driver.findElement(userName)) && 
+				wrap.verifyDisplayedwithReturn(driver.findElement(password)) &&
+				wrap.verifyDisplayedwithReturn(driver.findElement(loginBtn)) &&
+				wrap.verifyDisplayedwithReturn(driver.findElement(forgotPassword)) &&
+				wrap.verifyDisplayedwithReturn(driver.findElement(rememberMeCheckBox)))
+		{
 			return true;
 		} else {
 			return false;
 		}
 	}
+//		if ((driver.findElement(userName).isDisplayed()) && (driver.findElement(password).isDisplayed())
+//				&& (driver.findElement(loginBtn).isDisplayed()) && (driver.findElement(forgotPassword).isDisplayed())
+//				&& (driver.findElement(rememberMeCheckBox).isDisplayed())) {
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
 
-	public LoginPage enterUserName(String sUserName) {
+	public LoginPage enterUserName(String sUserName) {		
 		WebElement wUserName = driver.findElement(userName);
-		wUserName.sendKeys(sUserName);
-		return new LoginPage(driver);
+		wrap.type(wUserName, sUserName);
+//		wUserName.sendKeys(sUserName);
+		return new LoginPage(driver, node);
 	}
 
 	public LoginPage enterPassword(String sPassword) {
 		WebElement wPassword = driver.findElement(password);
-		wPassword.sendKeys(sPassword);
+		wrap.type(wPassword, sPassword);
+//		wPassword.sendKeys(sPassword);
 		return this;
 	}
 
 	public HomePage mClickLoginWithValidCredentials() {
 		WebElement wLoginBtn = driver.findElement(loginBtn);
-		wLoginBtn.click();
-		return new HomePage(driver);
+		wrap.click(wLoginBtn, "Login Button");
+//		wLoginBtn.click();
+		return new HomePage(driver, node);
 	}
 
 	public LoginPage mClickLoginWithInvalidCredentials() {
 		WebElement wLoginBtn = driver.findElement(loginBtn);
-		wLoginBtn.click();
+		wrap.click(wLoginBtn, "Login Button");
+//		wLoginBtn.click();
 		return this;
 	}
 
 	public boolean mValidateErrorMessage() {
 		WebElement wLoginFailureMsg = driver.findElement(loginFailureMsg);
-		if (wLoginFailureMsg.isDisplayed()) {
+		
+		if(wrap.verifyDisplayedwithReturn(wLoginFailureMsg))
+		{
 			return true;
 		} else {
 			return false;
