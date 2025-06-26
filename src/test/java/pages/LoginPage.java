@@ -18,13 +18,30 @@ public class LoginPage extends MenuPage {
 	private By rememberMeCheckBox = By.cssSelector("div.w0.pr.ln3.p16.remember>input");
 	private By loginFailureMsg = By.xpath("//div[@id = 'error']");
 	private WebDriver driver;
-	public SeleniumWrapper wrap;
+	private SeleniumWrapper wrap;
 	
 	public LoginPage(WebDriver driver, ExtentTest node)
 	{
+		/*
+		 * Calls the parent class (MenuPage) constructor, passing the driver and node objects. 
+		 * This ensures that the base class is properly initialized with these dependencies before any LoginPage-specific initialization occurs.
+		 */		
 		super(driver, node);
+		
+		/*
+		 * Assigns the value of the constructor parameter driver (passed when creating a LoginPage object) to the instance variable driver of the class. 
+		 * The this keyword distinguishes the instance variable from the parameter with the same name.
+		 */
 		this.driver = driver;
+		
+		/*
+		 * Similarly, assigns the constructor parameter node to the instance variable node of the class.
+		 */
 		this.node = node;
+		
+		/*
+		 * creates a new SeleniumWrapper instance for use within LoginPage.
+		 */
 		wrap = new SeleniumWrapper(driver, node);
 	}
 

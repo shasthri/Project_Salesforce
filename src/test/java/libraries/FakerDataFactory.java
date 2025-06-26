@@ -7,7 +7,7 @@ import com.github.javafaker.Faker;
 
 public class FakerDataFactory {
 
-	private static final Faker faker = new Faker(new Locale("en-IND")); 
+	private static final Faker faker = new Faker(); 
 	
 	private FakerDataFactory() {
 		 

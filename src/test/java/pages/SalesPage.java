@@ -33,7 +33,7 @@ public class SalesPage extends MenuPage {
 
 	private String sLastName = FakerDataFactory.getLastName();
 	private String sCompanyName = FakerDataFactory.getCompanyName();
-	public SeleniumWrapper wrap;
+	private SeleniumWrapper wrap;
 
 	
 	public SalesPage(WebDriver driver, ExtentTest node)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="SalesTest(failed)">
+<suite parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="classes" name="SalesTest(failed)">
     <classes>
       <class name="testscenarios.TC002_CreateLead">
         <methods>
@@ -10,7 +10,7 @@
           <include name="mLaunchBrowser"/>
           <include name="mCloseBrowser"/>
           <include name="reportEnd"/>
-          <include name="createSalesLeadWithMandatoryFields"/>
+          <include name="createSalesLeadWithMandatoryFields" invocation-numbers="0"/>
         </methods>
       </class> <!-- testscenarios.TC002_CreateLead -->
     </classes>

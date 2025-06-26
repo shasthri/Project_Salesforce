@@ -11,7 +11,7 @@ import libraries.SeleniumWrapper;
 public class HomePage extends MenuPage {
 	
 	private WebDriver driver;
-	public SeleniumWrapper wrap;
+	private SeleniumWrapper wrap;
 	
 	public HomePage(WebDriver driver, ExtentTest node)
 	{
