@@ -14,7 +14,7 @@ public class TC002_CreateLead extends BaseClass {
 	public String sLeadStatus= "Working - Contacted";
 
 	@BeforeTest
-	public void setExcelDataProperties()
+	public void setProperties()
 	{
 		sExcelFileName = "TC02";
 		sExcelSheetName = "SalesForce_Credentials";

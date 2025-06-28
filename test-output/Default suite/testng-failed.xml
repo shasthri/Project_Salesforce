@@ -3,14 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscenarios.TC002_CreateLead">
+      <class name="testscenarios.TC003_EditLead">
         <methods>
-          <include name="setExcelDataProperties"/>
+          <include name="reportInit"/>
+          <include name="editSalesLead"/>
           <include name="mLaunchBrowser"/>
           <include name="mCloseBrowser"/>
-          <include name="createSalesLeadWithMandatoryFields" invocation-numbers="0"/>
+          <include name="reportEnd"/>
+          <include name="setProperties"/>
         </methods>
-      </class> <!-- testscenarios.TC002_CreateLead -->
+      </class> <!-- testscenarios.TC003_EditLead -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -12,7 +12,7 @@ public class TC001_Login extends BaseClass {
 	//LoginPage login = new LoginPage(driver);
 	
 	@BeforeTest
-	public void setExcelDataProperties()
+	public void setProperties()
 	{
 		sExcelFileName = "TC01";
 		sExcelSheetName = "SalesForce_Credentials";
