@@ -17,7 +17,7 @@ public class TC001_Login extends BaseClass {
 		sExcelFileName = "TC01";
 		sExcelSheetName = "SalesForce_Credentials";
 		authors = "Shasthri";
-		category = "Smoke";
+		category = new String[] { "Smoke" , "Sanity" };
 		testName = "Login Test Scenario";
 		testDescription = "Login field validation and login with valid and invalid credrntials and verify the results";
 		moduleName = "Login";

@@ -10,7 +10,8 @@ public abstract class HTMLReport {
 	public static ExtentSparkReporter spark;
 	public static ExtentReports extent;
 	public ExtentTest test,node;
-	public String authors,category;
+	public String authors;
+	public String[] category = null;
 	
 	
 	/**

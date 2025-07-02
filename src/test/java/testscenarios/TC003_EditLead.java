@@ -16,23 +16,23 @@ public class TC003_EditLead extends BaseClass {
 	
 	@BeforeTest
 	public void setProperties() {
-		//sExcelFileName = "TC03";
-		//sExcelSheetName = "SalesForce_Credentials";
+		sExcelFileName = "TC01";
+		sExcelSheetName = "SalesForce_Credentials";
 		authors = "Shasthri";
-		category = "Sanity";
+		category = new String[] { "Sanity" };
 		testName = "Edit lead";
 		testDescription = "Edit lead and update the information";
 		moduleName = "Lead editing";
 	}
 	
-	@Test(priority = 1)
-	public void editSalesLead() {
+	@Test(priority = 1, dataProvider ="TestCaseData")
+	public void editSalesLead(String sUserName, String sPassword) {
 		boolean result = new LoginPage(driver, node).verifyLoginElements();
 		Assert.assertTrue(result);
 		
 		boolean checkLeadExists = new LoginPage(driver, node).
-				enterUserName("ssshasthri991@agentforce.com").
-				enterPassword("RCSeries#01").
+				enterUserName(sUserName).
+				enterPassword(sPassword).
 				mClickLoginWithValidCredentials().
 				verifyHomePageElements().
 				clickOnAppLauncher().
@@ -43,10 +43,12 @@ public class TC003_EditLead extends BaseClass {
 		Assert.assertTrue(checkLeadExists, "No Leads Exists to edit");
 		
 		boolean verifyleadTitle = new LeadsPage(driver, node).
-		leadActionsDropDown().
+		leadEditActionsDropDown().
 		clickEditButton().
 		editWindowDisplayed().
-		editLeadInformation().mClickOnSaveButton().verifyleadTitle();
+		editLeadInformation().
+		mClickOnSaveButton().
+		verifyleadTitle();
 		Assert.assertTrue(verifyleadTitle, "Lead title matches");
 		
 		boolean verifyLoginElements = new MenuPage(driver, node).clickUserImg().clickOnLogout().verifyLoginElements();

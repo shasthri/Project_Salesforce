@@ -19,7 +19,7 @@ public class TC002_CreateLead extends BaseClass {
 		sExcelFileName = "TC02";
 		sExcelSheetName = "SalesForce_Credentials";
 		authors = "Shasthri";
-		category = "Sanity";
+		category = new String[] { "Sanity" };
 		testName = "Create lead";
 		testDescription = "Create lead with only mandatory fields";
 		moduleName = "Lead creation";

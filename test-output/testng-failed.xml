@@ -3,16 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscenarios.TC003_EditLead">
+      <class name="testscenarios.TC004_DeleteLead">
         <methods>
           <include name="reportInit"/>
-          <include name="editSalesLead"/>
           <include name="mLaunchBrowser"/>
+          <include name="mVerifyLeadExists"/>
           <include name="mCloseBrowser"/>
           <include name="reportEnd"/>
-          <include name="setProperties"/>
+          <include name="mDeleteLead"/>
+          <include name="setProerties"/>
         </methods>
-      </class> <!-- testscenarios.TC003_EditLead -->
+      </class> <!-- testscenarios.TC004_DeleteLead -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
